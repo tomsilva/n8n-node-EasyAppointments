@@ -2,6 +2,10 @@
 
 Este nodo permite integrar Easy!Appointments con N8N, permitiendo la gestión completa de citas, clientes, proveedores y servicios.
 
+## Referencias
+
+Este nodo está basado en la API de [Easy!Appointments](https://github.com/alextselegidis/easyappointments), un poderoso sistema de programación de citas de código abierto que puede ser instalado en tu propio servidor.
+
 ## Características
 
 - Gestión completa de citas (appointments)
