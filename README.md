@@ -1,35 +1,35 @@
-# N8N Node for Easy!Appointments
+# N8N Node para Easy!Appointments
 
-Este nodo permite interactuar con la API de Easy!Appointments desde N8N.
+Este nodo permite integrar Easy!Appointments con N8N, permitiendo la gestión completa de citas, clientes, proveedores y servicios.
 
 ## Características
 
 - Gestión completa de citas (appointments)
-- Gestión de clientes (customers)
-- Gestión de proveedores (providers)
-- Gestión de servicios (services)
-- Gestión de categorías de servicios (service categories)
-- Gestión de disponibilidad (availability)
-- Gestión de indisponibilidad (unavailability)
+- Gestión de clientes
+- Gestión de proveedores
+- Gestión de servicios
+- Gestión de categorías de servicios
+- Gestión de disponibilidad
+- Gestión de indisponibilidad
 
 ## Operaciones
 
-Para cada recurso, el nodo permite realizar las siguientes operaciones:
+Para cada recurso, el nodo soporta las siguientes operaciones:
 
-- Create: Crear un nuevo recurso
-- Delete: Eliminar un recurso existente
-- Get: Obtener un recurso específico
-- GetAll: Obtener todos los recursos
-- Update: Actualizar un recurso existente
+- Create (Crear)
+- Delete (Eliminar)
+- Get (Obtener)
+- GetAll (Obtener todos)
+- Update (Actualizar)
 
 ## Credenciales
 
-El nodo requiere las siguientes credenciales:
+Para usar este nodo, necesitas configurar las siguientes credenciales:
 
-- API URL: La URL de tu instancia de Easy!Appointments
-- Authentication: Método de autenticación (Bearer Token o Basic Auth)
-- API Key: Si usas Bearer Token
-- Username y Password: Si usas Basic Auth
+- API URL: URL de tu instancia de Easy!Appointments (ejemplo: https://demo.easyappointments.org/index.php/api/v1/)
+- Autenticación: 
+  - Bearer Token: Token de API
+  - Basic Auth: Usuario y contraseña
 
 ## Instalación
 
@@ -42,53 +42,48 @@ El nodo requiere las siguientes credenciales:
    ```bash
    npm run build
    ```
-4. Copia la carpeta `dist` a tu instalación de N8N en la carpeta `custom/nodes`
+4. Copia la carpeta `dist` a tu instalación de N8N
+5. Reinicia N8N
 
 ## Uso
 
-1. En N8N, busca el nodo "Easy!Appointments"
+1. En N8N, agrega el nodo Easy!Appointments a tu flujo
 2. Configura las credenciales
 3. Selecciona el recurso y la operación que deseas realizar
-4. Configura los campos adicionales según sea necesario
+4. Configura los parámetros necesarios según la operación seleccionada
 
 ## Ejemplos
 
 ### Crear una cita
-
 ```json
 {
-  "resource": "appointment",
-  "operation": "create",
-  "additionalFields": {
-    "start": "2024-04-01T10:00:00",
-    "end": "2024-04-01T11:00:00",
-    "customerId": 1,
-    "providerId": 1,
-    "serviceId": 1,
-    "location": "Oficina Principal",
-    "notes": "Primera consulta"
-  }
+  "start": "2024-01-01 10:00:00",
+  "end": "2024-01-01 11:00:00",
+  "location": "Oficina Principal",
+  "notes": "Cita de prueba",
+  "customerId": 1,
+  "providerId": 1,
+  "serviceId": 1
 }
 ```
 
 ### Obtener todos los clientes
-
 ```json
 {
-  "resource": "customer",
-  "operation": "getAll"
+  "page": 1,
+  "length": 10
 }
 ```
 
 ## Contribuir
 
-Las contribuciones son bienvenidas. Por favor, asegúrate de:
+Las contribuciones son bienvenidas. Por favor:
 
-1. Hacer fork del repositorio
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+1. Haz un fork del repositorio
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
+5. Abre un Pull Request
 
 ## Licencia
 
